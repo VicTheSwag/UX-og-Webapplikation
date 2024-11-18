@@ -1,0 +1,95 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$link-decoration: none;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$custom-colors: (
+	"farve": $cyan-400,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrapComponents";
+
+// 5. Du kan lave s tyling her...
+
+@mixin text{
+	color: lightblue;
+	line-height: 2px;
+	letter-spacing: 5px;
+}
+
+$myColor: green;
+$binpadding: 16px;
+
+h1{
+	color:black;
+	text-align: center;
+	background-color: #a6b5cc;
+	padding: 10px;
+
+}
+p{
+	color: white;
+}
+
+a{
+	padding: $binpadding;
+	background-color: $myColor;
+	color: white;
+}
+
+.card{
+	background-color: #0dcaf0;
+	.header{
+		background-color: #6610f2;
+		text-align: center;
+		font-size: 25px;
+
+	}
+	.footer{
+		background-color: brown;
+		text-align: center;
+		font-size: 25px;
+	}
+	.body{
+		background-color: darkmagenta;
+		font-size: 25px;
+		text-align: center;
+	}
+
+}
+
+.button{
+
+	&.secondary{
+		display: flex;
+		background-color: darkmagenta;
+		padding: 4px 10px;
+		border-radius: 10px;
+	}
+
+	&.primary{
+		background-color: #e685b5;
+		padding: 4px 10px;
+		border-radius: 10px;
+	}
+
+	&.error{
+		background-color: #dc3545;
+		padding: 4px 10px;
+		border-radius: 10px;
+	}
+
+	&.success{
+		background-color: peru;
+		padding: 4px 10px;
+		border-radius: 10px;
+	}
+}
